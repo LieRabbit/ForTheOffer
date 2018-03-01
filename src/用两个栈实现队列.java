@@ -12,12 +12,12 @@ public class 用两个栈实现队列 {
     }
 
     public int pop() {
-        while (!stack1.empty())
-            stack2.push(stack1.pop());
-        int first = stack2.pop();
-        while (!stack2.empty())
-            stack1.push(stack2.pop());
-        return first;
+        if (stack2.isEmpty()) {
+            while (!stack1.isEmpty())
+                stack2.add(stack1.pop());
+        }
+
+        return stack2.pop();
     }
 
     public static void main(String[] args) {
