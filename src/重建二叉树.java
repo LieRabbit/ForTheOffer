@@ -13,6 +13,7 @@ public class 重建二叉树 {
     public TreeNode process(int[] pre, int startPre, int endPre, int in[], int startIn, int endIn) {
         if (startPre > endPre || startIn > endIn)
             return null;
+        // 先序的每个节点都是子树的头节点
         TreeNode root = new TreeNode(pre[startPre]);
 
         for (int i = startIn; i <= endIn; i++) {
