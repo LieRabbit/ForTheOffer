@@ -3,7 +3,7 @@
  */
 public class 矩形覆盖 {
     public int RectCover(int target) {
-        if (target == 0)
+        if (target <= 0)
             return 0;
         else if (target == 1)
             return 1;
