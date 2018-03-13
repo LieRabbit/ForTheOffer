@@ -7,9 +7,11 @@ public class 数字在排序数组中出现的次数 {
             return 0;
         else {
             int first = getFirstNum(array, k);
+            if (first == -1)
+                return 0;
             int last = getLastNum(array, k);
 
-            return first == -1 ? 0 : last - first + 1;
+            return last - first + 1;
         }
     }
 
@@ -58,6 +60,6 @@ public class 数字在排序数组中出现的次数 {
     public static void main(String[] args) {
         数字在排序数组中出现的次数 test = new 数字在排序数组中出现的次数();
         int[] array = {1, 2, 3, 3, 3, 3, 4, 5};
-        System.out.println(test.GetNumberOfK(array,3));
+        System.out.println(test.GetNumberOfK(array, 3));
     }
 }
