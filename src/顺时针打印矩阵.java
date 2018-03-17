@@ -21,13 +21,19 @@ public class 顺时针打印矩阵 {
         int right = col - 1;
 
         while (top <= bottom && left <= right) {
+            // 从左往右
             for (int i = left; i <= right; i++)
                 res.add(matrix[top][i]);
+            // 从上到下
             for (int i = top + 1; i <= bottom; i++)
                 res.add(matrix[i][right]);
-            for (int i = right - 1; i >= left && top < bottom; i--)
+
+            // 从右往左，当top==bottom时和从左往右重复了
+            for (int i = right - 1; i >= left && top != bottom; i--)
                 res.add(matrix[bottom][i]);
-            for (int i = bottom - 1; i > top && right > left; i--)
+
+            // 从下到上，当right==left时和从上到下重复了
+            for (int i = bottom - 1; i > top && right != left; i--)
                 res.add(matrix[i][left]);
             top++;
             left++;
