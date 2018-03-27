@@ -7,7 +7,7 @@ public class 数组中只出现一次的数字 {
         int k2 = 0;
         for (int a : array)
             k1 ^= a; // 最后k1为两数字的异或结果
-        int rightOne = k1 & (~k1 + 1);
+        int rightOne = k1 & (~k1 + 1); // 二进制右边第一个1
         for (int a : array)
             if ((a & rightOne) != 0)
                 k2 ^= a; // 最后k2为其中一个数字
