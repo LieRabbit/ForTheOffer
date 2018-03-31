@@ -10,8 +10,11 @@ public class 构建乘积数组 {
         if (length == 0)
             return B;
         B[0] = 1;
+        // 计算上三角
         for (int i = 1; i < length; i++)
             B[i] = B[i - 1] * A[i - 1];
+
+        // 计算下三角
         int temp = 1;
         for (int i = length - 1; i >= 0; i--) {
             B[i] *= temp;
