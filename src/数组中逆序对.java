@@ -38,7 +38,7 @@ public class 数组中逆序对 {
         int index = 0;
         while (l <= mid && r <= right) {
             if (arr[l] > arr[r]) {
-                count.value = (count.value + right - r + 1) % 1000000007; // 核心计算
+                count.value = (count.value + mid - l + 1) % 1000000007; // 核心计算
                 temp[index++] = arr[r++];
             } else {
                 temp[index++] = arr[l++];
@@ -53,7 +53,7 @@ public class 数组中逆序对 {
     }
 
     public static void main(String[] args) {
-        int[] arr = {1, 2, 3, 4, 5, 6, 7, 0};
+        int[] arr = {5, 6, 2, 3};
         数组中逆序对 test = new 数组中逆序对();
         int res = test.InversePairs(arr);
         System.out.println(res);
